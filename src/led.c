@@ -4,6 +4,10 @@
 void led_init(void)
 {
 	GPFCON |= ((1<<8)|(1<<10)|(1<<12));
+
+	led10_off();
+	led11_off();
+	led12_off();
 }
 
 void led10_on(void)

@@ -199,27 +199,34 @@
 	<Files>
 		<Folder
 			Name="Source Files"
-			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm">
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm"
+			GUID="{9D306FEB-B641-4774-BB32-6A9E699C0708}">
 			<F N="../src/led.c"/>
 			<F N="../main.c"/>
 			<F N="../s3c2440_it.c"/>
 			<F N="../start.S"/>
+			<F N="../src/uart0.c"/>
 		</Folder>
 		<Folder
 			Name="Header Files"
-			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if"
+			GUID="{217F01C2-F89E-4CEE-AB11-B744C009EECD}">
 			<F N="../inc/led.h"/>
 			<F N="../inc/s3c2440_defs.h"/>
+			<F N="../inc/uart0.h"/>
 		</Folder>
 		<Folder
 			Name="Resource Files"
-			Filters="*.ico;*.cur;*.dlg"/>
+			Filters="*.ico;*.cur;*.dlg"
+			GUID="{81263247-FB5A-4BE3-9C10-AE9A51D358E2}"/>
 		<Folder
 			Name="Bitmaps"
-			Filters="*.bmp"/>
+			Filters="*.bmp"
+			GUID="{DB31A56C-F741-499C-A810-1546DCE850D8}"/>
 		<Folder
 			Name="Other Files"
-			Filters="">
+			Filters=""
+			GUID="{3C5E2C2C-F2D7-4B1B-BB29-65CC68C91CB7}">
 			<F
 				N="../Makefile"
 				Type="Makefile"/>

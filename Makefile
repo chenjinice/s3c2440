@@ -10,6 +10,7 @@ OBJS += start.o
 OBJS += main.o
 OBJS += src/s3c2440_it.o
 OBJS += src/led.o
+OBJS += src/uart0.o
 
 all:$(OBJS)
 	arm-linux-ld -Ttext 0 $(OBJS) -o $(ELF) 

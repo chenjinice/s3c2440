@@ -26,36 +26,46 @@ _start:
 
 Reset_handler:
 
-//设置栈顶指针
+	//设置栈顶指针
    ldr sp,=4096
 
-//1.关闭看门狗
+	//1.关闭看门狗
 	ldr r0,=0x53000000
 	mov r1,#0
 	str r1,[r0]	
 	
-//2.设置时钟
-	ldr r0,=0x4C000000
-	ldr r1,=0xFFFFFFFF
-	str r1,[r0]
-	//设置MPLL，tFCLK：tHCLK：tPCLK = 1:4:8
-    ldr r0,=0x4C000014
-    ldr r1,=0x5
-    str r1,[r0]
-	//设置cup工作在异步模式
-    mrc p15,0,r0,c1,c0,0
-    orr r0,r0,#0xC0000000
-    mcr p15,0,r0,c1,c0,0
-	//设置MPLL，输出频率设为 400M
-    ldr r0,=0x4C000004
-    ldr r1,=(92<<12)|(1<<4)|(1<<0)
-    str r1,[r0]
-
-//3.初始化sdram
+	//2.设置时钟
 	
-	bl main	
+	//3.初始化sdram
+	
+		
+//	ldr r14,=halt
+//	bl main	
+	b test
+
+test:
+	ldr r0,=0x56000050
+	ldr r1,=(1<<8)|(1<<10)|(1<<12)
+	str r1,[r0]
+
+	ldr r0,=300000
+	bl	delay
+
+	ldr r0,=0x56000054
+	ldr r1,[r0]
+	orr r1,r1,#(1<<4)
+	str r1,[r0]
+
 
 halt:
+	ldr r0,=300000
+	bl	delay
+
+	ldr r0,=0x56000054
+	ldr r1,[r0]
+	orr r1,r1,#(1<<5)
+	str r1,[r0]
+
 	b halt
 
 

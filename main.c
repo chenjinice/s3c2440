@@ -3,25 +3,20 @@
 
 void delay(int count)
 {
-	while(count--);
+    while (count--);
 }
 
 int main(void)
 {
-	led_init();
-    led11_on();
-	led10_on();
-	led12_on();
-    delay(100000);
-	led11_off();
-	led10_off();
-	led12_off();
+    led_init();
+    uart0_init();
 
-	while(1)
-	{
-		delay(100000);
-		led11_toggle();
-	}
-	return 0;
-	
+    while (1)
+    {
+	     delay(1000000);
+	     puts("hello ,chen jin\n");
+	     led11_toggle();
+    }
+    return 0;
+
 }
