@@ -201,6 +201,7 @@
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm"
 			GUID="{9D306FEB-B641-4774-BB32-6A9E699C0708}">
+			<F N="../src/init.c"/>
 			<F N="../src/led.c"/>
 			<F N="../main.c"/>
 			<F N="../s3c2440_it.c"/>
@@ -211,6 +212,7 @@
 			Name="Header Files"
 			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if"
 			GUID="{217F01C2-F89E-4CEE-AB11-B744C009EECD}">
+			<F N="../inc/init.h"/>
 			<F N="../inc/led.h"/>
 			<F N="../inc/s3c2440_defs.h"/>
 			<F N="../inc/uart0.h"/>
@@ -227,6 +229,7 @@
 			Name="Other Files"
 			Filters=""
 			GUID="{3C5E2C2C-F2D7-4B1B-BB29-65CC68C91CB7}">
+			<F N="../boot.lds"/>
 			<F
 				N="../Makefile"
 				Type="Makefile"/>

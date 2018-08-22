@@ -5,6 +5,9 @@
 #define     __REG(x)		(*(volatile unsigned int *)(x)) 
 #define     __REG_BYTE(x)	(*(volatile unsigned char *)(x)) 
 
+#define GPH1	0X56000050
+#define GPH2	0X56000054
+
 //GPIOA 
 #define GPACON __REG(0x56000000)
 #define GPADAT __REG(0x56000004)
