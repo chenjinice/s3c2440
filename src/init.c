@@ -60,9 +60,9 @@ int check_boot_flash(void)
 
 void copy_to_sdram(unsigned char *dest,unsigned char *src,unsigned int len)
 {
-	if(check_boot_flash)
+	if(check_boot_flash())
 	{
-			unsigned int count  = 0;
+		unsigned int count  = 0;
 		while(count++ < len)
 		{
 			*dest++ = *src++;

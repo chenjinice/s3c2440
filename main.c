@@ -20,7 +20,7 @@ int main(void)
 	     delay(1000000);
 //	     puts("hello ,chen jin\n");
 	     putchar(g_a);
-	     led10_toggle();
+	     led11_toggle();
     }
     return 0;
 
