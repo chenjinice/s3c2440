@@ -17,10 +17,18 @@ int main(void)
 
     while (1)
     {
-	     delay(1000000);
-//	     puts("hello ,chen jin\n");
-	     putchar(g_a);
+	     delay(3000000);
+	     puts("hello ,chen jin\n\r");
+//	     putchar(g_a);
 	     led11_toggle();
+
+         // extern int _bss_start,_start;
+         // puts("-----------------------\n\r");
+         // printHex(_bss_start);puts("\n\r");
+         // printHex(&_bss_start);puts("\n\r");
+         // printHex(_start);puts("\n\r");
+         // printHex(&_start);puts("\n\r");
+
     }
     return 0;
 

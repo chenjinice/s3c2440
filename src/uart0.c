@@ -3,8 +3,9 @@
 
 void uart0_init(void)
 {
-    GPHCON |= (2<<4)|(2<<6);
-    GPHUP  &= !((1<<2)|(1<<3)); //使能上拉
+    __REG(0x56000070) |= (2<<4)|(2<<6);
+//    GPHUP  &= !((1<<2)|(1<<3)); //使能上拉
+    GPHUP = 0x7FF;
 
 	 //设置数据格式
     ULCON0 = 0x00000003;    //8n1:8数据位，无校验位，1停止位
@@ -39,3 +40,25 @@ int puts(char *s)
     }
 }
 
+void printHex(int value)
+{
+    unsigned char arr[8] = {0};
+    int i ;
+    for(i=0;i<8;i++)
+    {
+        arr[i] = value & 0xf;
+        value >>= 4;
+    }
+    puts("0x");
+    for(i=7;i>=0;i--)
+    {
+        if(arr[i] >= 0 && arr[i] <= 9)
+        {
+            putchar(arr[i]+'0');
+        }
+        else if(arr[i] >= 0xA)
+        {
+            putchar(arr[i]-0xA+'A');
+        }
+    }
+}
